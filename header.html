@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <title>BlockChain</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="https://opensea.io/static/images/logos/opensea.svg" alt="Logo"></a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Drops</a>
+                <a href="#">Stats</a>
+                <a href="createnft.html">Create</a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-right">
+                <button class="connect-wallet"><i class="ri-inbox-archive-line"></i> Kết nối ví</button>
+                <a href="login.html">
+                    <button class="login-btn">
+                        <a href="login.html"><i class="ri-login-box-line"></i> Đăng nhập</a>
+                    </button>
+                </a>
+                <a href="profile.html"><i class="ri-user-line"></i></a>
+                <i class="ri-shopping-cart-line"></i>
+            </div>
+        </nav>
+    </header>
+    <script>
+        // Hàm để load header
+        async function loadHeader() {
+            try {
+                const response = await fetch('/components/header.html');
+                const headerContent = await response.text();
+                document.body.insertAdjacentHTML('afterbegin', headerContent);
+            } catch (error) {
+                console.error('Error loading header:', error);
+            }
+        }
+
+        // Load header khi trang tải xong
+        document.addEventListener('DOMContentLoaded', loadHeader);
+
+    </script>
+
+</body>
+
+</html>
