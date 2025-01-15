@@ -72,11 +72,6 @@ def generate_wallet():
         'private_key': private_key 
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 def Conlai(private_key,public_key):
     Wallet_address = generate_bitcoin_address(public_key)
     private_key_bytes = private_key.to_string() 
@@ -87,10 +82,6 @@ def Conlai(private_key,public_key):
     iv_hex = iv.hex()
     AddDataDB(Wallet_address)
     return encrypted_private_key, iv_hex, Wallet_address
-<<<<<<< HEAD
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 
 # giải mã seed
 def recover_from_mnemonic(mnemonic):
@@ -99,15 +90,7 @@ def recover_from_mnemonic(mnemonic):
         raise ValueError("Invalid seed phrase")
     seed = mnemo.to_seed(mnemonic)
     private_key_bytes = hashlib.sha256(seed).digest()
-<<<<<<< HEAD
-<<<<<<< HEAD
-    private_key = SigningKey.from_string(private_key_bytes, curve=SECP256k1)
-=======
     private_key = private_key_bytes.hex()
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-    private_key = private_key_bytes.hex()
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     return private_key
 
 @app.route('/generate-keys', methods=['POST'])
@@ -117,64 +100,13 @@ def generate_keys():
     
     salt = get_random_bytes(16)
     key = scrypt(password, salt, key_len=32, N=2**14, r=8, p=1)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-    
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     Wallet = generate_wallet()
     private_key = Wallet['private_key']
     mnemonic = Wallet['mnemonic']
     public_key = generate_key_pair(private_key)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    Wallet_address = generate_bitcoin_address(public_key)
-    private_key_bytes = private_key.to_string() 
-    iv = get_random_bytes(AES.block_size)
-    cipher = AES.new(key, AES.MODE_CBC, iv=iv)
-    ciphertext = cipher.encrypt(pad(private_key_bytes, AES.block_size))
-    encrypted_private_key = ciphertext.hex()
-    iv_hex = iv.hex()
-    AddDataDB(Wallet_address)
-   
-    return jsonify({
-        'encrypted_private_key': encrypted_private_key,
-        # 'private_key': private_key.to_string().hex(),
-        'mnemonic': mnemonic,
-        'iv': iv_hex,
-        'Wallet_address': Wallet_address,
-        'salt': salt.hex()
-    })
-
-
-# lấy lại private_key bằng seed
-@app.route('/restore-wallet', methods=['POST'])
-def recover_Wallet():
-    data = request.get_json()
-    mnemonic = data.get('mnemonic')
-    password = data.get('password')
-    salt = get_random_bytes(16)
-    key = scrypt(password, salt, key_len=32, N=2**14, r=8, p=1)
-    private_key = recover_from_mnemonic(mnemonic)
-    public_key = generate_key_pair(private_key)
-    Wallet_address = generate_bitcoin_address(public_key)
-    private_key_bytes = private_key.to_string() 
-    iv = get_random_bytes(AES.block_size)
-    cipher = AES.new(key, AES.MODE_CBC, iv=iv)
-    ciphertext = cipher.encrypt(pad(private_key_bytes, AES.block_size))
-    encrypted_private_key = ciphertext.hex()
-    iv_hex = iv.hex()
-=======
     data_key = Conlai(private_key,public_key)
 
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-    data_key = Conlai(private_key,public_key)
-
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     return jsonify({
         'encrypted_private_key': encrypted_private_key,
         'private_key': private_key.to_string().hex(),
@@ -215,11 +147,6 @@ def Connect_Wallet():
             'decrypted_private_key': 'Null'
         })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 
 
 
@@ -232,9 +159,5 @@ def recover_Wallet():
     public_key = generate_key_pair(private_key)
     data_key = Conlai(private_key,public_key)
 
-<<<<<<< HEAD
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 if __name__ == '__main__':
     app.run(debug=True)

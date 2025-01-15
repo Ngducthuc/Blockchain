@@ -120,11 +120,6 @@
                         localStorage.setItem('encrypted_private_key', data.encrypted_private_key);
                         localStorage.setItem('iv', data.iv);
                         localStorage.setItem('salt', data.salt);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
                         
                         // Lưu private key vào sessionStorage nếu có
                         if (data.private_key) {
@@ -169,10 +164,6 @@
                         localStorage.setItem('encrypted_private_key', data.encrypted_private_key);
                         localStorage.setItem('iv', data.iv);
                         localStorage.setItem('salt', data.salt);
-<<<<<<< HEAD
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
                     } else {
                         console.error('Dữ liệu từ API thiếu hoặc không hợp lệ.');
                     }
@@ -183,15 +174,7 @@
             } else {
                 console.log('Password is empty!');
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-=======
        
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-       
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
         function handleCreateWallet() {
             const password = document.getElementById('createPassword').value;
             CreateWalletApi(password);
@@ -201,13 +184,6 @@
             const iv = localStorage.getItem('iv');
             const salt = localStorage.getItem('salt');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            // Kiểm tra dữ liệu từ LocalStorage
-=======
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
             if (!encrypted_private_key || !iv || !salt) {
                 console.error('Dữ liệu LocalStorage bị thiếu!');
                 alert('Dữ liệu ví không đầy đủ. Vui lòng kiểm tra lại.');
@@ -239,21 +215,11 @@
                 console.log('Decrypted Private Key:', data.decrypted_private_key);
 
                 if (data.Code === 200) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    alert('Kết nối ví thành công!');
-=======
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
                     // luư mã vào sessionStorage
                     sessionStorage.setItem('decrypted_private_key', data.decrypted_private_key);
                     
                     alert('Kết nối ví thành công!');
                     window.location.href = 'index.html';
-<<<<<<< HEAD
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
                 } else {
                     alert('Mật khẩu không đúng hoặc dữ liệu không hợp lệ!');
                 }
@@ -270,26 +236,11 @@
                 alert('⚠️ Vui lòng nhập mật khẩu!');
                 return;
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
             Ping_Connect_Wallet(password);
         }
 
     </script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 </body>
 </html>

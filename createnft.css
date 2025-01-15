@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -136,6 +137,8 @@ textarea {
 
 textarea {
 =======
+=======
+>>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 .container1 {
     max-width: 1200px;
     margin: 0 auto;
@@ -240,11 +243,15 @@ textarea {
 }
 
 .textarea1 {
+<<<<<<< HEAD
 >>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
+=======
+>>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     min-height: 100px;
     resize: vertical;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .create-button {
     background-color: #3498db;
@@ -253,18 +260,24 @@ textarea {
     padding: 12px 24px;
     border-radius: 8px;
 =======
+=======
+>>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 .create-button1 {
     background-color: #3ea6ff;
     color: #ffffff;
     border: none;
     padding: 12px 24px;
     border-radius: 4px;
+<<<<<<< HEAD
 >>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
+=======
+>>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     cursor: pointer;
     font-size: 16px;
     float: right;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .create-button:hover {
     background-color: #2980b9;
@@ -283,6 +296,8 @@ textarea {
         min-height: 400px;
     }
 =======
+=======
+>>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 .create-button1:hover {
     background-color: #3095eb;
 }
@@ -334,5 +349,8 @@ textarea {
 
 .modal-close-button1:hover {
     background-color: #3095eb;
+<<<<<<< HEAD
 >>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
+=======
+>>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
 }

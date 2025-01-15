@@ -10,14 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
 </head>
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <header id="header-container"></header>
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
-    <header id="header-container"></header>
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     <main class="product-container">
         <div class="product-image">
             <img src="https://placehold.co/600x600" alt="NFT Image">
@@ -115,16 +108,6 @@
         </div>
     </main>
     <script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        async function loadHeader() {
-            try {
-                const response = await fetch('header.html');
-                const headerContent = await response.text();
-                document.body.insertAdjacentHTML('afterbegin', headerContent);
-=======
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
         // haàm suưử lý header khi login dđẻể laâấy key decrypted_private_key
         async function loadAndUpdateHeader() {
             try {
@@ -143,30 +126,16 @@
                     loginContainer.style.display = 'none';
                     loginContainer.parentNode.insertBefore(keyDisplay, loginContainer);
                 }
-<<<<<<< HEAD
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
             } catch (error) {
                 console.error('Error loading header:', error);
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        document.addEventListener('DOMContentLoaded', loadHeader);
-=======
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
         document.addEventListener('DOMContentLoaded', loadAndUpdateHeader);
         window.addEventListener('storage', function(e) {
             if (e.key === 'decrypted_private_key') {
                 loadAndUpdateHeader();
             }
         });
-<<<<<<< HEAD
->>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
-=======
->>>>>>> a31e764efbeadbf03829b40a65dd2150566dae16
     </script>
     
 </body>
