@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+=======
+<html lang="vi">
+>>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Create an NFT</title>
+=======
+    <title>Tạo NFT</title>
+>>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
+    <link rel="stylesheet" href="createnft.css">
+</head>
+
+<body>
+<<<<<<< HEAD
+    <div class="header">
+        <button class="back-button">←</button>
+        <div class="wallet-info">
+            <span class="balance">0 ETH</span>
+            <span class="balance">0 WETH</span>
+            <div class="profile-icon"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Create an NFT</h1>
+        <p class="subtitle">Once your item is minted you will not be able to change any of its information.</p>
+
+        <div class="content-wrapper">
+            <div class="upload-section">
+                <div class="upload-area">
+                    <div class="upload-icon">↑</div>
+                    <div>Drag and drop media</div>
+                    <div class="browse-text">Browse files</div>
+                    <div class="file-info">Max size: 50MB<br>JPG, PNG, GIF, SVG, MP4</div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <form>
+                    <div class="form-group">
+                        <label>Name <span class="required">*</span></label>
+                        <input type="text" placeholder="Name your NFT">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Supply <span class="required">*</span></label>
+                        <input type="number" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea placeholder="Enter a description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>External link</label>
+                        <input type="text" placeholder="https://collection.io/item/123">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="button-create"><button type="submit" class="create-button">Create</button></div>
+    </div>
+</body>
+
+</html>
+=======
+    <header id="header-container"></header>
+        <div class="container1">
+            <header class="header1">
+                <a  class="back-button1" onclick="window.history.back()">← Trở về</a>
+                <h1 class="title1">Tạo NFT</h1>
+                <p class="subtitle1">Sau khi NFT được tạo, bạn sẽ không thể thay đổi thông tin của nó.</p>
+            </header>
+    
+            <main class="main1">
+                <div class="upload-section1">
+                    <div class="upload-box1" id="uploadBox1">
+                        <div class="upload-content1">
+                            <span class="upload-icon1">↑</span>
+                            <p class="upload-text1">Kéo và thả tập tin phương tiện</p>
+                            <button class="upload-button1">Chọn tập tin</button>
+                            <p class="file-info1">
+                                Dung lượng tối đa: 50MB<br>
+                                Định dạng hỗ trợ: JPG, PNG, GIF, SVG, MP4
+                            </p>
+                        </div>
+                    </div>
+                    <div class="error-message1" id="fileError1"></div>
+                </div>
+    
+                <div class="form-section1">
+                    <form id="nftForm1" novalidate>
+                        <div class="form-group1">
+                            <label class="label1">Tên NFT <span class="required1">*</span></label>
+                            <input type="text" class="input1" id="nftName1" placeholder="Nhập tên NFT">
+                            <div class="error-message1" id="nameError1"></div>
+                        </div>
+    
+                        <div class="form-group1">
+                            <label class="label1">Số lượng <span class="required1">*</span></label>
+                            <input type="number" class="input1" id="nftQuantity1" value="1" min="1">
+                            <div class="error-message1" id="quantityError1"></div>
+                        </div>
+    
+                        <div class="form-group1">
+                            <label class="label1">Mô tả</label>
+                            <textarea class="textarea1" id="nftDescription1" placeholder="Nhập mô tả"></textarea>
+                        </div>
+    
+                        <div class="form-group1">
+                            <label class="label1">Liên kết ngoài</label>
+                            <input type="url" class="input1" id="nftLink1" placeholder="https://collection.io/item/123">
+                            <div class="error-message1" id="linkError1"></div>
+                        </div>
+    
+                        <button type="submit" class="create-button1">Tạo</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    
+        <div class="success-modal1" id="successModal1">
+            <div class="success-content1">
+                <h2>Thành công!</h2>
+                <p>NFT đã được tạo thành công.</p>
+                <button class="modal-close-button1" onclick="closeSuccessModal()">Đóng</button>
+            </div>
+        </div>
+    
+        <script src="script.js"></script>
+
+    <script>
+
+
+        async function loadAndUpdateHeader() {
+            try {
+                const response = await fetch('header.html');
+                const headerContent = await response.text();
+                document.getElementById('header-container').innerHTML = headerContent;
+
+                const loginContainer = document.querySelector('.login-btn');
+                const decryptedKey = sessionStorage.getItem('decrypted_private_key');
+                
+                if (decryptedKey && loginContainer) {
+                    const keyDisplay = document.createElement('div');
+                    keyDisplay.className = 'decrypted-key';
+                    const truncatedKey = decryptedKey.substring(0, 14) + '...';
+                    keyDisplay.textContent = `${truncatedKey}`;
+                    keyDisplay.style.display = 'block';
+                    loginContainer.style.display = 'none';
+                    loginContainer.parentNode.insertBefore(keyDisplay, loginContainer);
+                } else {
+                    window.location.href = 'login.html'; // Điều hướng nếu không có khóa
+                }
+            } catch (error) {
+                console.error('Error loading header:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAndUpdateHeader);
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'decrypted_private_key') {
+                loadAndUpdateHeader();
+            }
+        });
+
+        // Xử lý sự kiện gửi form
+        document.getElementById('create-button1').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('NFT đã được tạo thành công!');
+        });
+    </script>
+</body>
+
+</html>
+>>>>>>> fb46439973b6959eac98b654fa0d73b364945eb7
