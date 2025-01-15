@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <title>BlockChain</title>
+    <style>
+        .decrypted-key {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-right: 15px;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="https://opensea.io/static/images/logos/opensea.svg" alt="Logo"></a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Drops</a>
+                <a href="#">Stats</a>
+                <a href="createnft.html">Create</a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="nav-right">
+                <div id="loginContainer">
+                    <a href="login.html" class="login-btn">
+                        <i class="ri-login-box-line"></i> Đăng nhập
+                    </a>
+                </div>
+                <div id="decryptedKey" class="decrypted-key"></div>
+                <a href="profile.html"><i class="ri-user-line"></i></a>
+                <i class="ri-shopping-cart-line"></i>
+            </div>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginContainer = document.getElementById('loginContainer');
+            const decryptedKeyElement = document.getElementById('decryptedKey');
+            const decryptedKey = sessionStorage.getItem('decrypted_private_key');
+
+            if (decryptedKey) {
+                loginContainer.style.display = 'none';
+                decryptedKeyElement.style.display = 'block';
+                const truncatedKey = decryptedKey.substring(0, 14) + '...';
+                decryptedKeyElement.textContent = `${truncatedKey}`;
+            } else {
+                loginContainer.style.display = 'block';
+                decryptedKeyElement.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
